@@ -1,17 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar/Navbar"
 
 import Home from "./pages/Home"
 import ProjectsPage from "./pages/ProjectsPage"
-import ExperiencePage from "./pages/ExperiencePage"
-import EducationPage from "./pages/EducationPage"
 import CertificatesPage from "./pages/CertificatesPage"
 import ContactPage from "./pages/ContactPage"
 import Journey from "./components/Journey/journey"
 
 function App() {
   return (
-    <BrowserRouter basename="/Narrendran-Poorangavel">
+    <BrowserRouter>
       {/* <Navbar /> */}
 
       <Routes>
