@@ -1,0 +1,31 @@
+.typewriter {
+    display: inline-block;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: var(--accent);
+    animation: blink 0.8s step-end infinite;
+    font-weight: 300;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Optional: reduce motion support */
+@media (prefers-reduced-motion: reduce) {
+    .typewriter-cursor {
+        animation: none;
+        opacity: 1;
+    }
+}

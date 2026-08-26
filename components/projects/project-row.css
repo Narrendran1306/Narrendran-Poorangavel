@@ -1,0 +1,164 @@
+/* ===== Project Row ===== */
+.project-row {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    overflow: hidden;
+}
+
+.project-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.project-row.featured {
+    border-color: rgba(59, 130, 246, 0.22);
+}
+
+/* Main visible row */
+.project-row-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-row-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(145deg,
+            rgba(59, 130, 246, 0.18),
+            rgba(139, 92, 246, 0.12));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.project-row-icon svg {
+    font-size: 1.5rem !important;
+}
+
+.project-row-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-row-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.project-row-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+/* Tech pills (collapsed state) */
+.project-row-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+    max-width: 320px;
+}
+
+.tech-pill {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    white-space: nowrap;
+}
+
+/* Expandable details – expanded by default */
+.project-row-details {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 20px;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease,
+        margin-top 0.3s ease;
+}
+
+/* When expandOnHover is true → start collapsed */
+.project-row.expand-on-hover .project-row-details {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+/* Expand on hover only when the prop is true */
+.project-row.expand-on-hover:hover .project-row-details {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.project-row-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.project-row-tech-full {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.project-row-links {
+    display: flex;
+    gap: 20px;
+}
+
+.project-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.project-link:hover {
+    opacity: 0.75;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-row {
+        padding: 16px 18px;
+    }
+
+    .project-row-main {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .project-row-tech {
+        width: 100%;
+        justify-content: flex-start;
+        max-width: none;
+    }
+
+    .project-row-name {
+        font-size: 1.05rem;
+    }
+}
