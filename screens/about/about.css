@@ -20,7 +20,7 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 48px;
   align-items: start;
 }
@@ -57,6 +57,8 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
+
+.about-text, .about-info, .info-card > div:last-child { min-width: 0; }
 
 .info-icon {
   display: flex;

@@ -1,7 +1,7 @@
 /* ===== Project Row ===== */
 .project-row {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 20px 24px;
     margin-bottom: 16px;
@@ -11,7 +11,7 @@
 }
 
 .project-row:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--surface-elevated);
     border-color: rgba(59, 130, 246, 0.3);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
@@ -162,3 +162,5 @@
         font-size: 1.05rem;
     }
 }
+
+.project-row-main > * { min-width: 0; }

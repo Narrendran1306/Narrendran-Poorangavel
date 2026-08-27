@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         <p className="section-eyebrow">{projectsDetails.eyebrow}</p>
         <h2 className="section-title">{projectsDetails.title}</h2>
 
-        <div className="project-filters">
+        {/* <div className="project-filters">
           {projectsDetails.categories.map((cat) => (
             <button
               key={cat}
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
               {cat}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* ── Featured Projects ── */}
         {featured.length > 0 && (
@@ -131,7 +131,7 @@ export default function ProjectsPage() {
             <ProjectRow
               key={project.id}
               project={project}
-              expandOnHover={true}
+              expandOnHover={false}
             />
           ))}
         </div>

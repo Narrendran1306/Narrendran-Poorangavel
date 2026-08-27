@@ -4,12 +4,15 @@
   z-index: 999;
   pointer-events: none;
   opacity: 0;
+  overflow: clip;
+  visibility: hidden;
   transition: opacity 0.3s ease;
 }
 
 .mobile-menu.open {
   pointer-events: auto;
   opacity: 1;
+  visibility: visible;
 }
 
 .mobile-menu-backdrop {
@@ -23,8 +26,9 @@
   position: absolute;
   top: var(--nav-height);
   right: 0;
-  width: min(300px, 85vw);
-  height: calc(100vh - var(--nav-height));
+  width: min(300px, calc(100vw - 32px));
+  max-width: 100%;
+  height: calc(100dvh - var(--nav-height));
   background: var(--surface);
   border-left: 1px solid var(--border);
   padding: 24px 16px;
@@ -40,12 +44,14 @@
 }
 
 .mobile-link {
+  width: 100%;
   padding: 14px 16px;
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-secondary);
   border-radius: 10px;
   text-align: left;
+  overflow-wrap: anywhere;
   transition: color var(--transition), background var(--transition);
 }
 

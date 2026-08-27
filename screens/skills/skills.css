@@ -8,7 +8,7 @@
 
 .skills-layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
   gap: 40px;
   align-items: start;
 }
@@ -38,7 +38,7 @@
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: 14px;
 }
 
@@ -61,6 +61,8 @@
   gap: 10px;
   margin-bottom: 12px;
 }
+
+.skills-main, .skill-card, .skill-card-header, .expertise-panel { min-width: 0; }
 
 .skill-icon { color: var(--accent); }
 .skill-name { font-weight: 600; font-size: 0.95rem; }

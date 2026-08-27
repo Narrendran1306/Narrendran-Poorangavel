@@ -88,10 +88,10 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="scroll-indicator">
+        {/* <div className="scroll-indicator">
           <span>Scroll Down</span>
           <div className="scroll-mouse" />
-        </div>
+        </div> */}
       </div>
 
     </section>
