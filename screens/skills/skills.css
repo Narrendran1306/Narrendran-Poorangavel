@@ -65,6 +65,24 @@
   margin-bottom: 12px;
 }
 
+.skill-card-compact {
+  padding: 14px 16px;
+}
+
+.skill-card-compact .skill-card-header {
+  margin-bottom: 0;
+}
+
+.skill-pct-badge {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
 .skills-main,
 .skill-card,
 .skill-card-header,
@@ -122,9 +140,18 @@
   margin-bottom: 16px;
 }
 
+.expertise-row-compact {
+  margin-bottom: 12px;
+}
+
+.expertise-row-compact .expertise-label {
+  margin-bottom: 0;
+}
+
 .expertise-label {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -132,9 +159,24 @@
   color: var(--text-primary);
 }
 
+.expertise-label-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .expertise-label svg {
   color: var(--accent);
   font-size: 1rem;
+}
+
+.expertise-pct-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 2px 8px;
+  border-radius: 9999px;
 }
 
 .expertise-bar-wrap {

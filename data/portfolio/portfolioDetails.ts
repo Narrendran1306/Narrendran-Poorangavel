@@ -65,6 +65,10 @@ export const skillsDetails = {
   title: "My Skills",
   description:
     "I develop scalable and maintainable web applications using modern frontend, backend, database, and API technologies.",
+
+  showPercentage: false,
+  // Set showBar to true/false to show/hide the skill progress bars
+  showBar: true,
   categories: ["ALL", "FRONTEND", "BACKEND", "DATABASE", "TOOLS", "OTHERS"] as const,
   skills: [
     { name: "HTML5", category: "FRONTEND", level: 90, icon: "Html" },
@@ -89,6 +93,14 @@ export const skillsDetails = {
     { name: "Python", category: "OTHERS", level: 60, icon: "Code" },
     { name: "Java", category: "OTHERS", level: 55, icon: "Code" },
   ],
+};
+
+export const expertiseConfig = {
+  title: "MY EXPERTISE",
+  // Set showPercentage to true/false to show/hide the % numbers in the expertise section
+  showPercentage: false,
+  // Set showBar to true/false to show/hide the expertise progress bars
+  showBar: true,
 };
 
 export const expertiseDetails = [

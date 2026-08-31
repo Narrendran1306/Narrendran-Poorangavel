@@ -92,9 +92,9 @@ export default function ProjectsPage() {
                   {project.modules && project.modules.length > 0 ? (
                     <div className="module-diagram">
                       <div className="module-core">
-                        ERP
+                        Major ERP cores
                         <br />
-                        core
+                        Worked
                       </div>
                       {project.modules.map((mod, i) => {
                         const angle =
