@@ -24,7 +24,7 @@ export const siteConfig = {
 
 export const homeDetails = {
   greeting: "Hi, I'm",
-  name: "NARRENDREN POORANGAVEL",
+  name: "NARRENDRAN POORANGAVEL",
   title: "Junior Full Stack Developer",
   titles: ["React & TypeScript Developer", "Node.js Developer", "Full Stack Engineer", "Web Application Developer", "MERN Stack Developer", "Software Developer", "Full Stack Developer"],
   description:
@@ -65,6 +65,10 @@ export const skillsDetails = {
   title: "My Skills",
   description:
     "I develop scalable and maintainable web applications using modern frontend, backend, database, and API technologies.",
+
+  showPercentage: false,
+  // Set showBar to true/false to show/hide the skill progress bars
+  showBar: true,
   categories: ["ALL", "FRONTEND", "BACKEND", "DATABASE", "TOOLS", "OTHERS"] as const,
   skills: [
     { name: "HTML5", category: "FRONTEND", level: 90, icon: "Html" },
@@ -72,23 +76,31 @@ export const skillsDetails = {
     { name: "JavaScript", category: "FRONTEND", level: 90, icon: "Javascript" },
     { name: "TypeScript", category: "FRONTEND", level: 90, icon: "Code" },
     { name: "React.js", category: "FRONTEND", level: 90, icon: "Code" },
-    { name: "Redux", category: "FRONTEND", level: 85, icon: "Code" },
-    { name: "Redux Saga", category: "FRONTEND", level: 85, icon: "Code" },
-    { name: "MUI", category: "FRONTEND", level: 80, icon: "Code" },
+    // { name: "Redux", category: "FRONTEND", level: 85, icon: "Code" },
+    { name: "Redux / State Management", category: "FRONTEND", level: 85, icon: "Code" },
+    { name: "Responsive UI/UX", category: "FRONTEND", level: 80, icon: "Code" },
     { name: "NestJS", category: "BACKEND", level: 85, icon: "Code" },
     { name: "REST APIs", category: "BACKEND", level: 90, icon: "Api" },
-    { name: "JWT Authentication", category: "BACKEND", level: 80, icon: "Security" },
+    // { name: "JWT Authentication", category: "BACKEND", level: 80, icon: "Security" },
     { name: "MongoDB", category: "DATABASE", level: 85, icon: "Storage" },
     { name: "Mongoose", category: "DATABASE", level: 85, icon: "Storage" },
     { name: "MySQL", category: "DATABASE", level: 60, icon: "Storage" },
-    { name: "Git / GitHub", category: "TOOLS", level: 85, icon: "GitHub" },
-    { name: "Axios", category: "TOOLS", level: 85, icon: "Code" },
+    { name: "Git & GitHub", category: "TOOLS", level: 85, icon: "GitHub" },
+    // { name: "Axios", category: "TOOLS", level: 85, icon: "Code" },
     { name: "Postman", category: "TOOLS", level: 80, icon: "Api" },
     { name: "Zoho CRM", category: "OTHERS", level: 75, icon: "Business" },
     { name: "Deluge", category: "OTHERS", level: 75, icon: "Code" },
     { name: "Python", category: "OTHERS", level: 60, icon: "Code" },
     { name: "Java", category: "OTHERS", level: 55, icon: "Code" },
   ],
+};
+
+export const expertiseConfig = {
+  title: "MY EXPERTISE",
+  // Set showPercentage to true/false to show/hide the % numbers in the expertise section
+  showPercentage: false,
+  // Set showBar to true/false to show/hide the expertise progress bars
+  showBar: true,
 };
 
 export const expertiseDetails = [
@@ -152,16 +164,16 @@ export const projectsDetails = {
       github: "",
       modules: [
         "Employee",
-        "Product",
+        // "Product",
         "Customer",
         "Orders",
         "Sales",
         "Inventory",
         "Leave",
-        "Attendance",
+        // "Attendance",
         "Payroll",
         "Teams",
-        "Permissions",
+        // "Permissions",
       ],
     },
     {
@@ -373,20 +385,20 @@ export const experienceDetails = {
   title: "Work Experience",
   items: [
     {
-      title: "Zoho Developer Intern",
-      company: "Elite Tech Park",
-      period: "Mar 2024 – Jul 2024",
-      description:
-        "Automated manual data entry and lead qualification processes using Zoho CRM and Deluge scripting. Implemented custom business logic, designed business process automation solutions, and collaborated with senior developers to optimize existing automation workflows.",
-      tech: ["Zoho CRM", "Deluge", "Zoho Creator"],
-    },
-    {
       title: "Junior Developer",
       company: "GWAYERP Tech Solutions",
       period: "Dec 2024 – Oct 2025",
       description:
         "Independently developed multiple ERP modules end-to-end using React, TypeScript, Redux, Redux Saga, NestJS, and REST APIs. Worked on Sales Shipment, Services, Sales Return, Audit Trail, Inventory, Transit Management, Purchase Receipt, and Goods Receipt modules while implementing complex business workflows and MongoDB database changes.",
       tech: ["React", "TypeScript", "Redux Saga", "NestJS", "REST APIs", "MongoDB"],
+    },
+    {
+      title: "Zoho Developer Intern",
+      company: "Elite Tech Park",
+      period: "Mar 2024 – Jul 2024",
+      description:
+        "Automated manual data entry and lead qualification processes using Zoho CRM and Deluge scripting. Implemented custom business logic, designed business process automation solutions, and collaborated with senior developers to optimize existing automation workflows.",
+      tech: ["Zoho CRM", "Deluge", "Zoho Creator"],
     },
   ],
 };
@@ -403,22 +415,22 @@ export const educationDetails = {
       score: "CGPA: 7.49 / 10",
       icon: "School",
     },
-    {
-      degree: "Higher Secondary",
-      field: "HSC",
-      institution: "H.N.U.P.R. Matric Higher Secondary School",
-      period: "",
-      score: "76.67%",
-      icon: "MenuBook",
-    },
-    {
-      degree: "Secondary",
-      field: "SSLC",
-      institution: "H.N.U.P.R. Matric Higher Secondary School",
-      period: "",
-      score: "84.2%",
-      icon: "Edit",
-    },
+    // {
+    //   degree: "Higher Secondary",
+    //   field: "HSC",
+    //   institution: "H.N.U.P.R. Matric Higher Secondary School",
+    //   period: "",
+    //   score: "76.67%",
+    //   icon: "MenuBook",
+    // },
+    // {
+    //   degree: "Secondary",
+    //   field: "SSLC",
+    //   institution: "H.N.U.P.R. Matric Higher Secondary School",
+    //   period: "",
+    //   score: "84.2%",
+    //   icon: "Edit",
+    // },
   ],
 };
 

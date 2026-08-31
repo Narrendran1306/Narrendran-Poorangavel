@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { skillsDetails, expertiseDetails, expertiseIntro } from "@/data/portfolio/portfolioDetails";
+import { skillsDetails, expertiseDetails, expertiseIntro, expertiseConfig } from "@/data/portfolio/portfolioDetails";
 import CodeIcon from "@mui/icons-material/Code";
 import HtmlIcon from "@mui/icons-material/Html";
 import CssIcon from "@mui/icons-material/Css";
@@ -36,6 +36,13 @@ export default function SkillsPage() {
 
   const filtered = filter === "ALL" ? skillsDetails.skills : skillsDetails.skills.filter(s => s.category === filter);
 
+  const globalSkillPct = (skillsDetails as { showPercentage?: boolean }).showPercentage ?? true;
+  const globalSkillBar = (skillsDetails as { showBar?: boolean }).showBar ?? true;
+
+  const globalExpertisePct = expertiseConfig?.showPercentage ?? true;
+  const globalExpertiseBar = expertiseConfig?.showBar ?? true;
+  const expertiseTitle = expertiseConfig?.title || "MY EXPERTISE";
+
   return (
     <section id="skills" className="skills" ref={sectionRef}>
       <div className="container">
@@ -55,16 +62,27 @@ export default function SkillsPage() {
             <div className="skill-grid">
               {filtered.map(skill => {
                 const Icon = iconMap[skill.icon] || CodeIcon;
+                const hasLevel = typeof skill.level === "number";
+                const showPct = hasLevel && ((skill as { showPercentage?: boolean }).showPercentage ?? globalSkillPct);
+                const showBar = hasLevel && ((skill as { showBar?: boolean }).showBar ?? globalSkillBar);
+
                 return (
-                  <div key={skill.name} className="skill-card">
+                  <div key={skill.name} className={`skill-card ${!showBar && !showPct ? "skill-card-compact" : ""}`}>
                     <div className="skill-card-header">
                       <Icon className="skill-icon" fontSize="small" />
                       <span className="skill-name">{skill.name}</span>
+                      {showPct && !showBar && (
+                        <span className="skill-pct-badge">{skill.level}%</span>
+                      )}
                     </div>
-                    <div className="skill-bar-wrap">
-                      <div className="skill-bar" style={{ width: animated ? `${skill.level}%` : "0%" }} />
-                    </div>
-                    <span className="skill-pct">{skill.level}%</span>
+                    {showBar && (
+                      <div className="skill-bar-wrap">
+                        <div className="skill-bar" style={{ width: animated ? `${skill.level}%` : "0%" }} />
+                      </div>
+                    )}
+                    {showPct && showBar && (
+                      <span className="skill-pct">{skill.level}%</span>
+                    )}
                   </div>
                 );
               })}
@@ -72,19 +90,32 @@ export default function SkillsPage() {
           </div>
 
           <aside className="expertise-panel">
-            <h3>MY EXPERTISE</h3>
+            <h3>{expertiseTitle}</h3>
             {expertiseDetails.map(item => {
               const Icon = iconMap[item.icon] || CodeIcon;
+              const hasLevel = typeof item.level === "number";
+              const showPct = hasLevel && ((item as { showPercentage?: boolean }).showPercentage ?? globalExpertisePct);
+              const showBar = hasLevel && ((item as { showBar?: boolean }).showBar ?? globalExpertiseBar);
+
               return (
-                <div key={item.name} className="expertise-row">
+                <div key={item.name} className={`expertise-row ${!showBar && !showPct ? "expertise-row-compact" : ""}`}>
                   <div className="expertise-label">
-                    <Icon fontSize="small" />
-                    <span>{item.name}</span>
+                    <div className="expertise-label-left">
+                      <Icon fontSize="small" />
+                      <span>{item.name}</span>
+                    </div>
+                    {showPct && !showBar && (
+                      <span className="expertise-pct-badge">{item.level}%</span>
+                    )}
                   </div>
-                  <div className="expertise-bar-wrap">
-                    <div className="expertise-bar" style={{ width: animated ? `${item.level}%` : "0%" }} />
-                  </div>
-                  <span className="expertise-pct">{item.level}%</span>
+                  {showBar && (
+                    <div className="expertise-bar-wrap">
+                      <div className="expertise-bar" style={{ width: animated ? `${item.level}%` : "0%" }} />
+                    </div>
+                  )}
+                  {showPct && showBar && (
+                    <span className="expertise-pct">{item.level}%</span>
+                  )}
                 </div>
               );
             })}

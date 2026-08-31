@@ -1,5 +1,5 @@
 .home {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   padding-top: 0;
@@ -17,14 +17,15 @@
 
 .home-text {
   margin-top: 50px;
+  min-width: 0;
 }
 
 .home-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(56, 107, 82, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 107, 82, 0.045) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at 70% 50%, black 20%, transparent 70%);
 }
@@ -56,6 +57,7 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .home-greeting {
@@ -70,11 +72,21 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--text-primary) 40%, var(--accent));
+  background: linear-gradient(135deg, var(--text-primary) 45%, var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
+}
+
+[data-theme="light"] .home-glow,
+[data-theme="light"] .home-glow-2 {
+  opacity: 0.28;
+  filter: saturate(0.35);
+}
+
+[data-theme="light"] .home-glow-2 {
+  background: radial-gradient(circle, rgba(56, 107, 82, 0.08), transparent 70%);
 }
 
 .home-title {
@@ -82,6 +94,8 @@
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 16px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .home-desc {
@@ -107,6 +121,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
 }
 
 .hero-visual {
@@ -298,8 +313,8 @@
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  right: 0%;
-  bottom: 0%;
+  right: 24px;
+  bottom: 24px;
 }
 
 .scroll-mouse {

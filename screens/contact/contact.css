@@ -2,7 +2,7 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 48px;
   align-items: start;
 }
@@ -29,6 +29,8 @@
   transform: translateX(4px);
 }
 
+.contact-item > div:last-child { min-width: 0; }
+
 .contact-icon {
   display: flex;
   align-items: center;
@@ -52,6 +54,7 @@
   display: block;
   font-weight: 600;
   font-size: 0.95rem;
+  overflow-wrap: anywhere;
 }
 
 .contact-actions {

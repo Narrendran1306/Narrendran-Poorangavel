@@ -47,6 +47,7 @@ export default function Typewriter({
 
         return () => clearTimeout(timeout);
     }, [displayText, isDeleting, textIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
+    console.log("Typewriter rendered :", displayText); // Debugging log to check if Typewriter is rendering
 
     return (
         <span className={`typewriter ${className}`}>

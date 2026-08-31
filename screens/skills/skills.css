@@ -1,4 +1,6 @@
-.skills { background: var(--surface); }
+.skills {
+  background: var(--surface);
+}
 
 .skills-desc {
   color: var(--text-secondary);
@@ -8,7 +10,7 @@
 
 .skills-layout {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
   gap: 40px;
   align-items: start;
 }
@@ -30,15 +32,16 @@
   transition: all var(--transition);
 }
 
-.filter-btn:hover, .filter-btn.active {
-  color: white;
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--on-accent);
   background: var(--accent);
   border-color: var(--accent);
 }
 
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: 14px;
 }
 
@@ -62,8 +65,39 @@
   margin-bottom: 12px;
 }
 
-.skill-icon { color: var(--accent); }
-.skill-name { font-weight: 600; font-size: 0.95rem; }
+.skill-card-compact {
+  padding: 14px 16px;
+}
+
+.skill-card-compact .skill-card-header {
+  margin-bottom: 0;
+}
+
+.skill-pct-badge {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.skills-main,
+.skill-card,
+.skill-card-header,
+.expertise-panel {
+  min-width: 0;
+}
+
+.skill-icon {
+  color: var(--accent);
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
 
 .skill-bar-wrap {
   height: 6px;
@@ -75,7 +109,7 @@
 
 .skill-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  background: var(--accent);
   border-radius: 3px;
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -106,9 +140,18 @@
   margin-bottom: 16px;
 }
 
+.expertise-row-compact {
+  margin-bottom: 12px;
+}
+
+.expertise-row-compact .expertise-label {
+  margin-bottom: 0;
+}
+
 .expertise-label {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -116,7 +159,25 @@
   color: var(--text-primary);
 }
 
-.expertise-label svg { color: var(--accent); font-size: 1rem; }
+.expertise-label-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.expertise-label svg {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.expertise-pct-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
 
 .expertise-bar-wrap {
   height: 6px;
@@ -128,7 +189,7 @@
 
 .expertise-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  background: var(--accent);
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -148,6 +209,7 @@
   .skills-layout {
     grid-template-columns: 1fr;
   }
+
   .expertise-panel {
     position: static;
     order: -1;
